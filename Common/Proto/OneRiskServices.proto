@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Common.Proto";
+package proto;
+
+service HelloService {
+	rpc SayHello (HelloRequest) returns (HelloResponse);
+	rpc MultipleHello (HelloRequest) returns (stream HelloResponse);
+}
+
+message HelloRequest {
+	string greeting = 1;
+}
+
+message HelloResponse {
+	string reply = 1;
+}
+
