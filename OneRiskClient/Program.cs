@@ -17,7 +17,7 @@ namespace OneRiskClient
     {
         static async Task Main(string[] args)
         {
-            GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:5001");
+            GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:15001");
             var client = new HelloService.HelloServiceClient(channel);
 
             // Hello.Greeter.GreeterClient client = new GrpcServer.Greeter.GreeterClient(channel);
@@ -41,10 +41,11 @@ namespace OneRiskClient
 
             try
             {
-                await foreach (var calldata in streamingCall.ResponseStream.ReadAllAsync(cancellationToken: cts.Token))
-                {
-                    Console.WriteLine(calldata.Reply);
-                }
+                //await foreach (var calldata in streamingCall.ResponseStream.ReadAllAsync(cancellationToken: cts.Token))
+                //{
+                //    Console.WriteLine(calldata.Reply);
+                //}
+                Console.WriteLine("Done");
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
             {

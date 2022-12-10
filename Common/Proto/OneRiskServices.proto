@@ -14,5 +14,16 @@ message HelloRequest {
 
 message HelloResponse {
 	string reply = 1;
+	double d1 = 2;
+	string p1 = 3;
+	string p2 = 4;
+	string p3 = 5;
+	string p4 = 6;
+	string p5 = 7;
+	string p6 = 8;
+	string p7 = 9;
+	string p8 = 10;
+	string p9 = 11;
+	string p10 = 12;
 }
 
