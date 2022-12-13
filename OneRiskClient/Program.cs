@@ -41,10 +41,10 @@ namespace OneRiskClient
 
             try
             {
-                //await foreach (var calldata in streamingCall.ResponseStream.ReadAllAsync(cancellationToken: cts.Token))
-                //{
-                //    Console.WriteLine(calldata.Reply);
-                //}
+                await foreach (var calldata in streamingCall.ResponseStream.ReadAllAsync(cancellationToken: cts.Token))
+                {
+                    Console.WriteLine(calldata.Reply +  " " + calldata.P1 + " " + calldata.P1);
+                }
                 Console.WriteLine("Done");
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

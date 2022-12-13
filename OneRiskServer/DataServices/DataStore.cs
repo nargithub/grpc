@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 
-namespace OneRiskServer.Services
+namespace OneRiskServer.DataServices
 {
     public class Columns
     {
@@ -72,7 +72,6 @@ namespace OneRiskServer.Services
             for (var i = 0; i < RowCount; i++)
             {
                 _row = _table.NewRow();
-                _table.Rows.Add(_row);
                 PopulateRow();
             }
         }
@@ -101,10 +100,9 @@ namespace OneRiskServer.Services
         }
 
         static Random rd = new Random();
-        internal static string GetString(int stringLength = 10)
+        internal static string GetString(int stringLength = 100)
         {
-            // const string allowedChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789!@$?_-";
-            const string allowedChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+            const string allowedChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789!@$?_-";
             char[] chars = new char[stringLength];
 
             for (int i = 0; i < stringLength; i++)
